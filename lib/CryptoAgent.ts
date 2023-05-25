@@ -1,9 +1,9 @@
 import * as crypto from 'crypto';
 
 /**
- * Encryption
+ * Crypto agent
  */
-class Encryption {
+class CryptoAgent {
   /**
    * Algo  of encryption
    */
@@ -91,4 +91,4 @@ class Encryption {
   }
 }
 
-export default Encryption;
+export default CryptoAgent;
