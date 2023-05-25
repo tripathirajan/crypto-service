@@ -1,2 +1,2 @@
-export { default as Hashing } from './Hashing';
-export { default as Encryption } from './Encryption';
+export { default as HashingAgent } from './HashingAgent';
+export { default as CryptoAgent } from './CryptoAgent';

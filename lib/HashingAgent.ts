@@ -1,9 +1,9 @@
 import * as bcrypt from 'bcrypt';
 
 /**
- * Hashing
+ * HashingAgent
  */
-class Hashing {
+class HashingAgent {
   /**
    * Base64s encode
    * @param payload
@@ -35,7 +35,7 @@ class Hashing {
     if (!payload) return toReturn;
     const salt = await bcrypt.genSalt(saltLen || 5);
     const hash = await bcrypt.hash(payload, salt);
-    toReturn = Hashing.base64Encode(hash);
+    toReturn = this.base64Encode(hash);
     return toReturn;
   }
 
@@ -49,9 +49,9 @@ class Hashing {
     if (!payload || !hash) {
       return false;
     }
-    const matched = await bcrypt.compare(payload, Hashing.base64Decode(hash));
+    const matched = await bcrypt.compare(payload, this.base64Decode(hash));
     return matched;
   }
 }
 
-export default Hashing;
+export default HashingAgent;
